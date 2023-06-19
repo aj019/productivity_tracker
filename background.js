@@ -12,7 +12,7 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
             visitsJson = result.visits
         }
         // Store tab url and visits in storage
-        if(visitsJson.host) {
+        if(visitsJson[host]) {
             visitsJson[host] += 1
         } else {
             visitsJson[host] = 1

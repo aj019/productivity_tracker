@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    font-family: Arial, sans-serif;
+  }
+  .title {
+    width: "100%";
+    text-align: center;
+    font-size: 2rem;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .tabs {
+    margin-right: 20px;
+  }
+  
+  .tabs ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .visitCount ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tabItem {
+    margin-bottom: 10px;
+  }
+  
+  .visitCountItem {
+    margin-bottom: 10px;
+  }
+  
+  .tabLink {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .visitCountText {
+    font-weight: bold;
+  }
+
+  .item {
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
