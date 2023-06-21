@@ -13,18 +13,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100vh;   
+    overflow: scroll; 
   }
   
   .tabs {
     margin-right: 20px;
+    height: 100%
   }
   
   .tabs ul {
     list-style-type: none;
     padding: 0;
   }
-  
+  .visitCount{
+    height: 100%;
+  }
   .visitCount ul {
     list-style-type: none;
     padding: 0;

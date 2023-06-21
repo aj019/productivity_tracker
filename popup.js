@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded',() => {
     console.log("Document loaded 1");
     var container = document.getElementById("visitList")
+    var clearButton = document.getElementById("clear")
+    clearButton.addEventListener("click", function() {
+        chrome.storage.sync.set({ 'visits': {} }, function() {
+            console.log('Data saved: ' + data);
+        });
+    })
 
     function sortObject(obj) {
         let sortable = [];

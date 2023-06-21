@@ -2,7 +2,7 @@ console.log("Background Started");
 
 chrome.tabs.onActivated.addListener(function(activeInfo) {
     chrome.tabs.get(activeInfo.tabId, function(tab) {
-      console.log('Current tab changed:', tab.url);
+      console.log('Current tab changed:', tab);
       let url = new URL(tab.url)
       let host = url.hostname
       let visitsJson = {}
