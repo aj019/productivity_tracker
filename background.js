@@ -13,11 +13,13 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
         }
         // Store tab url and visits in storage
         if(visitsJson[host]) {
-            visitsJson[host] += 1
+            visitsJson[host].count += 1
         } else {
-            visitsJson[host] = 1
+            visitsJson[host] = {}
+            visitsJson[host].count = 1
+            visitsJson[host].image =  tab.favIconUrl;
         }
-        
+        console.log("visitsJson",visitsJson);
         chrome.storage.sync.set({ 'visits': visitsJson }, function() {
             console.log('Data saved: ' + data);
         });

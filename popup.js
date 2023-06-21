@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded',() => {
     // Load data from storage and display it
     chrome.storage.sync.get(['visits'], function(result) {
         if (result.visits) {
-            let visits = sortObject(result.visits)
+            console.log('result.visits: ', result.visits);
+            // let visits = sortObject(result.visits)
+            let visits = result.visits
             let keys = Object.keys(visits)
             let tabs = document.createElement("div")
             tabs.setAttribute("class","tabs")
@@ -43,12 +45,17 @@ document.addEventListener('DOMContentLoaded',() => {
             for(let i =0 ; i < keys.length; i++) {
                 
                 let listItem = document.createElement("li")
-                listItem.appendChild(document.createTextNode(""+keys[i]))
+                let favIcon = document.createElement("img")
+                favIcon.setAttribute("src",visits[keys[i]].image)
+                let tabDiv = document.createElement("div")
+                tabDiv.appendChild(favIcon)
+                tabDiv.appendChild(document.createTextNode(""+keys[i]))
+                listItem.appendChild(tabDiv)
                 listItem.setAttribute("class","item")
                 tabList.appendChild(listItem)
 
                 let listItem2 = document.createElement("li")
-                listItem2.appendChild(document.createTextNode(""+visits[keys[i]]))
+                listItem2.appendChild(document.createTextNode(""+visits[keys[i]].count))
                 listItem2.setAttribute("class","item")
                 visitCountList.appendChild(listItem2)
             }
